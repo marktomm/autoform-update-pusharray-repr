@@ -61,7 +61,7 @@ Schema.User = new SimpleSchema({
   },
   clients: {
     type: Array,
-    optional: true  // Accounts.createUser doesn't not accept any additional containers for insertion
+    optional: true  
   },
   'clients.$': {
     type: Schema.ClientEntry
@@ -71,17 +71,6 @@ Schema.User = new SimpleSchema({
     optional: true,
     blackbox: true
   },
-  // No plans for using role groups, so an array of string is fine
-  roles: {
-    type: [String],
-    optional: true
-  },
-  
-  // this is used on the server side when sending Accounts emails (resetPassword etc)
-  lang: {
-    type: String,
-    optional: true
-  }
 });
 
 Meteor.users.attachSchema(Schema.User);
