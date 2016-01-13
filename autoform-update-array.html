@@ -1,0 +1,17 @@
+<head>
+  <title>autoform-update-array</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{> loginButtons}}
+  
+  {{#if currentUser}}
+    {{> quickForm id='userSettingsEditForm' collection='Meteor.users' type='update-pushArray' scope='clients'}}
+  {{/if}}
+</template>
